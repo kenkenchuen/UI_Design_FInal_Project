@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- Server Stuff -->
+<script type="text/javascript" src="{{ url_for('static', filename = 'quiz3.js') }}"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <div class="lessonTitle">
+                Quiz - Question 2
+            </div>
+
+            <br>
+            <div class="bodyText">
+                <div id="question">
+                    Capture the filenames and extension types of only image files (not including 
+                    temporary files for images currently being edited). Image files are defined 
+                    as <b>.jpg</b>,<b>.png</b>, and <b>.gif</b>.
+                </div>
+                
+                <br>
+                <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
+                    <div class="card-body q1">
+                        img0912.jpg	
+                    </div>
+                </div>
+                <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
+                    <div class="card-body q2">
+                        updated_img0912.png	
+                    </div>
+                </div>
+                <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
+                    <div class="card-body q3">
+                        favicon.gif	
+                    </div>
+                </div>
+                <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
+                    <div class="card-body q4">
+                        documentation.html		
+                    </div>
+                </div>
+                <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
+                    <div class="card-body q5">
+                        img0912.jpg.tmp		
+                    </div>
+                </div>
+                
+                
+            </div>
+
+            <br>
+            <div class="input-group mb-3" style="max-width: 75%; text-align: center;">
+                <input id="regexBox" type="text" class="form-control redBorder" placeholder="Type your regex pattern here" style="height: 50px;">
+            </div>
+
+            <div style="text-align: right;">
+                <a id="next" href="/done" class="btn btn-success btn-lg disabled">Next</a>
+            </div>
+              
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- Server Stuff -->
+<script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <div style="text-align: center; font-weight:700; font-size: 70px;">
+                CONGRATULATIONS!
+            </div>
+            <div style="text-align: center; font-size: 30px;">
+                You've finished this basic Regex tutorial! 
+            </div>
+
+            <br><br><br>
+            <div class="row">
+                <div class="col-md-5">
+                    <div style="text-align: right;">
+                        <a href="/lesson1" class="btn btn-success btn-lg">Take the tutorial again</a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-5">
+                    <div style="text-align: left;">
+                        <a href="/quiz" class="btn btn-success btn-lg">Take the quiz again</a>
+                    </div>
+                </div>
+            </div>
+            
+            <br>
+            
+              
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

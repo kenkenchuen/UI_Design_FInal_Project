@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- Server Stuff -->
+<script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <div class="lessonTitle">
+                Quiz - Question 1
+            </div>
+
+            <br>
+            <div class="bodyText">
+                <div id="question">
+                    Given the Regex “[a-zA-Z0-9]{5,10}”, which best describes what the expression matches?
+                </div>
+                
+                <br>
+                <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
+                    <div class="card-body multipleChoice wrong">
+                        The exact string “a-zA-Z0-9” 5 to 10 times.
+                    </div>
+                </div>
+                <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
+                    <div class="card-body multipleChoice correct">
+                        An alphanumeric string that is 5 to 10 characters long.
+                    </div>
+                </div>
+                <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
+                    <div class="card-body multipleChoice wrong">
+                        An alphanumeric string that is exactly 5 or 10 characters long.
+                    </div>
+                </div>
+                <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
+                    <div class="card-body multipleChoice wrong">
+                        The same alphanumeric character repeated 5 to 10 times.
+                    </div>
+                </div>
+            </div>
+
+            
+            
+            <br>
+            <div style="text-align: right;">
+                <a id="next" href="/quiz2" class="btn btn-success btn-lg disabled">Next</a>
+            </div>
+              
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

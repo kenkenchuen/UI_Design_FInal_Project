@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- Server Stuff -->
+<script type="text/javascript" src="{{ url_for('static', filename = 'lesson2.js') }}"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <div class="lessonTitle">
+                Lesson 2 - Wildcard (.)
+            </div>
+
+            <br>
+            <div class="bodyText">
+                <b>Meta characters</b> are the building blocks of regular expressions. 
+                Meta characters do not stand for themselves but instead are interpreted in some special way. 
+                <br><br>
+                The simplest example of a meta character is “<b>.</b>” which matches any single character (letter, 
+                digit, whitespace).
+
+                <br><br>
+                <div class="row tab" >
+                    <div class="col-md-1" style="color: gray;">
+                        Pattern
+                    </div>
+                    <div class="col-md-1">                       
+                    </div>
+                    <div class="col-md-7" style="color: gray;">
+                        Text
+                    </div>
+                </div>
+                <hr style="width:70%; text-align:left; margin-left:100px; margin-top: 2px; margin-bottom: 0px;">
+            
+                <div class="row tab align-items-center" >
+                    <div class="col-md-1">
+                        ".ar"
+                    </div>
+                    <div class="col-md-1 text-center">
+                        <span style="font-size: 30px;">&#8658;</span>
+                    </div>
+                    <div class="col-md-7">
+                        The <mark>car</mark> was <mark>par</mark>ked outside.
+                    </div>
+                </div>
+                <div class="row tab align-items-center" >
+                    <div class="col-md-1">
+                        “a.a”
+                    </div>
+                    <div class="col-md-1 text-center">
+                        <span style="font-size: 30px;">&#8658;</span>
+                    </div>
+                    <div class="col-md-7">
+                        The d<mark>ata</mark> is not <mark>ava</mark>lible for public use.
+                    </div>
+                </div>
+                <div class="row tab align-items-center" >
+                    <div id="examplePattern" class="col-md-1">
+                        
+                    </div>
+                    <div class="col-md-1 text-center">
+                        <span style="font-size: 30px;">&#8658;</span>
+                    </div>
+                    <div id="exampleText" class="col-md-10">
+          
+                    </div>
+                </div>
+                <div class="row tab align-items-center" >
+                    <div class="col-md-12" style="color:gray; font-size: 12px; margin-top:5px;">
+                        Note, these examples (and future examples) will highlight all 
+                        strings which match the regular expression. 
+                        <br>Regex normally matches just the first matching string.
+                    </div>
+                    
+                </div>
+
+
+
+                <br>
+                To move onto the next lesson, write a single regex pattern to match the 
+                strings "<b>able</b>" and "<b>call</b>" in the following sentences:
+                <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
+                    <div class="card-header excercise1">
+                        I was not able to get the limited-edition t-shirt.
+                    </div>
+                </div>
+                <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
+                    <div class="card-header excercise2">
+                        Please call the office and tell Mary that we're late.
+                    </div>
+                </div>
+            </div>
+
+            
+            
+            <br>
+            <div class="input-group mb-3" style="max-width: 75%; text-align: center; margin-top: -10px;">
+                <input id="regexBox" type="text" class="form-control" placeholder="Type your regex pattern here" style="height: 50px;">
+                <div class="input-group-append">
+                    <a id="nextLesson" href="/lesson3" class="btn btn-success btn-lg disabled">Next lesson</a>
+                </div>
+            </div>
+
+            <div id="solution">
+                <div style="color:gray; font-size: 12px; cursor: pointer; margin-top: -10px; margin-left: 10px;">
+                    View the solution
+                </div> 
+            </div>
+
+              
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

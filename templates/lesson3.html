@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- Server Stuff -->
+<script type="text/javascript" src="{{ url_for('static', filename = 'lesson3.js') }}"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <div class="lessonTitle">
+                Lesson 3 - Character Classes
+            </div>
+
+            <br>
+            <div class="bodyText">
+                Character classes are indicated by square brackets, 
+                and are used to match any character inside the brackets. 
+                For example, “[abc]” will match either a, b, or c.  
+                <br>Using a hyphen inside a character class specifies the characters' range. 
+                For example, “[a-d]” is the same as “[abcd]”. 
+                Note, the order of the characters or the range doesn't matter. 
+
+
+                <br><br>
+                <div class="row tab" >
+                    <div class="col-md-2" style="color: gray;">
+                        Pattern
+                    </div>
+                    <div class="col-md-1">                       
+                    </div>
+                    <div class="col-md-7" style="color: gray;">
+                        Text
+                    </div>
+                </div>
+                <hr style="width:70%; text-align:left; margin-left:100px; margin-top: 2px; margin-bottom: 0px;">
+                
+                <div class="row tab align-items-center" >
+                    <div class="col-md-2">
+                        "fo[z-a]"
+                    </div>
+                    <div class="col-md-1">
+                        <span style="font-size: 30px;">&#8658;</span>
+                    </div>
+                    <div class="col-md-7">
+                        They were cannon <mark>fod</mark>der be<mark>for</mark>e the <mark>fou</mark>r battleships.
+                    </div>
+                </div>
+                <div class="row tab align-items-center" >
+                    <div class="col-md-2">
+                        “[0-9]”
+                    </div>
+                    <div class="col-md-1">
+                        <span style="font-size: 30px;">&#8658;</span>
+                    </div>
+                    <div class="col-md-7">
+                        There are only <mark>2</mark><mark>8</mark> days in February.
+                    </div>
+                </div>
+                <div class="row tab align-items-center" >
+                    <div id="examplePattern" class="col-md-2">
+                        
+                    </div>
+                    <div class="col-md-1">
+                        <span style="font-size: 30px;">&#8658;</span>
+                    </div>
+                    <div id="exampleText" class="col-md-8">
+          
+                    </div>
+                </div>
+
+                <br>
+                To move onto the quiz, write a single regex pattern to match the 
+                strings "<b>man</b>" and "<b>can</b>", but not the string "<b>pan</b>":
+                <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
+                    <div class="card-header excercise1">
+                        man
+                    </div>
+                </div>
+                <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
+                    <div class="card-header excercise2">
+                        can
+                    </div>
+                </div>
+                <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
+                    <div class="card-header excercise3">
+                        pan
+                    </div>
+                </div>
+            </div>
+
+            
+            
+            <br>
+            <div class="input-group mb-3" style="max-width: 75%; text-align: center; margin-top: -10px;">
+                <input id="regexBox" type="text" class="form-control" placeholder="Type your regex pattern here" style="height: 50px;">
+                <div class="input-group-append">
+                    <a id="nextLesson" href="/quiz" class="btn btn-success btn-lg disabled">Take the Quiz</a>
+                </div>
+            </div>
+
+            <div id="solution">
+                <div style="color:gray; font-size: 12px; cursor: pointer; margin-top: -10px; margin-left: 10px;">
+                    View the solution
+                </div> 
+            </div>
+
+              
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

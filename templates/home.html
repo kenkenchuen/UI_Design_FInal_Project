@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- Server Stuff -->
+<script type="text/javascript" src="{{ url_for('static', filename = 'home.js') }}"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <div class="bodyText">
+                A <b>regular expression</b> is group of characters or symbols used to find a specific pattern in a text. 
+                The following lessons and examples will explore the more practical uses of regular expressions so 
+                that you can use them as quickly as possible.
+
+                <br><br>
+                Here's an example of a regular expression:
+            </div>
+            
+            <br>
+
+            <div class="centered">
+                <img style="width: 35%;" src="{{ url_for('static', filename = 'regexp-en.png') }}" alt="" >
+                
+                <br><br><br>
+                <a href="/lesson1" class="btn btn-success btn-lg">Let's get started!</a>
+            </div>
+          
+            
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- Server Stuff -->
+<script type="text/javascript" src="{{ url_for('static', filename = 'lesson1.js') }}"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <div class="lessonTitle">
+                Lesson 1 - Basic Matching
+            </div>
+
+            <br>
+            <div class="bodyText">
+                The most basic regex pattern uses just letter and number characters, providing a rather direct search.
+                <br>
+                Note that regular expressions are normally case-sensitive, and return the first string that 
+                matches the expression.
+
+                <br><br>
+                <div class="row tab" >
+                    <div class="col-md-1" style="color: gray;">
+                        Pattern
+                    </div>
+                    <div class="col-md-1">                       
+                    </div>
+                    <div class="col-md-7" style="color: gray;">
+                        Text
+                    </div>
+                </div>
+                <hr style="width:70%; text-align:left; margin-left:100px; margin-top: 2px; margin-bottom: 0px;">
+
+                <div class="row tab align-items-center" >
+                    <div class="col-md-1">
+                        “the”
+                    </div>
+                    <div class="col-md-1 text-center">
+                        <span style="font-size: 30px;">&#8658;</span>
+                    </div>
+                    <div class="col-md-7">
+                        The doctor is ready for <mark>the</mark> next patient.
+                    </div>
+                </div>
+                <div class="row tab align-items-center" >
+                    <div class="col-md-1">
+                        “The”
+                    </div>
+                    <div class="col-md-1 text-center">
+                        <span style="font-size: 30px;">&#8658;</span>
+                    </div>
+                    <div class="col-md-7">
+                        <mark>The</mark> doctor is ready for the next patient.
+                    </div>
+                </div>
+                <div class="row tab align-items-center" >
+                    <div id="examplePattern" class="col-md-1">
+                        
+                    </div>
+                    <div class="col-md-1 text-center">
+                        <span style="font-size: 30px;">&#8658;</span>
+                    </div>
+                    <div id="exampleText" class="col-md-8">
+                        The exam grades will be returned in 24 hours or less.
+                    </div>
+                </div>
+
+                <br>
+                To move onto the next lesson, write a regex pattern to match the string "<b>fox</b>" in the following sentence:
+                <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px;">
+                    <div class="card-header excercise">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                The quick brown fox jumps over the lazy dog.
+                            </div>
+                            <!-- <div id="check" style="visibility: hidden;">
+                                &#x2714;
+                            </div> -->
+                       </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            
+            
+            <br>
+            <div class="input-group mb-3" style="max-width: 75%; text-align: center; margin-top: -10px;">
+                <input id="regexBox" type="text" class="form-control" placeholder="Type your regex pattern here" style="height: 50px;">
+                <div class="input-group-append">
+                    <a id="nextLesson" href="/lesson2" class="btn btn-success btn-lg disabled">Next lesson</a>
+                </div>
+            </div>
+
+            <div id="solution">
+                <div style="color:gray; font-size: 12px; cursor: pointer; margin-top: -10px; margin-left: 10px;">
+                    View the solution
+                </div> 
+            </div>
+              
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
