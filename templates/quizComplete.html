@@ -2,16 +2,16 @@
 
 {% block content %}
 <!-- Server Stuff -->
-<script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'quizComplete.js') }}"></script>
 
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <br>
-            <div style="text-align: center; font-weight:700; font-size: 70px;">
+            <div id="congrats" style="text-align: center; font-weight:700; font-size: 70px;">
                 CONGRATULATIONS!
             </div>
-            <div style="text-align: center; font-size: 30px;">
+            <div style="text-align: center; font-size: 30px; margin-top: 10px">
                 You've finished this basic Regex tutorial! 
             </div>
 
@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-md-5">
                     <div style="text-align: left;">
-                        <a href="/quiz" class="btn btn-success btn-lg">Take the quiz again</a>
+                        <a href="/quiz1" class="btn btn-success btn-lg">Take the quiz again</a>
                     </div>
                 </div>
             </div>

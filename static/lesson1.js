@@ -41,10 +41,6 @@ var checkMatch = function(regex) {
     
     var t = excerciseText.replace(re, '<mark><b>$1</b></mark>')
 
-    if($("#regexBox").val().length === 0 ) {
-        t = excerciseText
-    }
-
     $(".excercise").html(t)
 
     match = (t == excerciseAnswer)
@@ -65,7 +61,7 @@ var viewSolution = function() {
     $("#solution").empty();
 
     $("#solution").append(`
-    <div class="card" style="max-width: 61.5%; font-size: 14px; margin-top: 10px;">
+    <div class="card" style="max-width: 61.5%; font-size: 14px; margin-top: 10px; background-color: lightgray ;">
         <div class="card-header">
             ${solutionText}
         </div>

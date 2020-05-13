@@ -1,16 +1,18 @@
 function timer(ms) { return new Promise(res => setTimeout(res, ms)); }
 
-var exampleText = "The flying pig was annoying the king."
-var examplePatterns = ["[a-z]i[a-z]"]
+var exampleText = "The AK-47 has many variants such as the AKS-74U and AK-74M." 
+var examplePatterns = ["[A-Z]{2,3}.{2,4}"]
 
-var excerciseTexts = ["man",
-                      "can",
-                      "pan"]
-var excerciseAnswers = ["<mark><b>man</b></mark>",
-                        "<mark><b>can</b></mark>",
-                        "pan"]
+var excerciseTexts = ["aabbcc",
+                      "aaaabbccc",
+                      "abc",
+                      "aaabbc"]
+var excerciseAnswers = ["<mark><b>aabbcc</b></mark>",
+                        "<mark><b>aaaabbccc</b></mark>",
+                        "abc",
+                        "aaabbc"]
 
-var solutionText = 'To match "m" and "c" and exclude "p", put "mc" in square brackets: "[mc]". This will match only "m" or "c". The complete regex pattern is "[mc]an".'
+var solutionText = "The strings we want to match should have 2-4 a's, 2 b's, and 2-3 c's. Thus, the regex pattern should be \"a{2,4}b{2}c{2,3}\"." 
 
 var match = false
 
@@ -22,7 +24,7 @@ async function exampleGIF() {
         for(var j = 0; j < curPattern.length; j++) {
             p += curPattern[j]
 
-            if(!(j == 4 || j == 5 || j == 10)) 
+            if(!(j == 4 || j == 9 || j == 10 | j == 15)) 
                 continue
             
             let re = new RegExp(`(${p})`, "g")
@@ -33,9 +35,9 @@ async function exampleGIF() {
             var t = exampleText.replace(re, '<mark>$1</mark>')
             $("#exampleText").html(t)
 
-            await timer(1000);    
+            await timer(1500);    
         }
-        await timer(1000); 
+        await timer(2000); 
     }
 
     exampleGIF()
@@ -49,7 +51,7 @@ var checkMatch = function(regex) {
     match = true;
     for(var i = 0; i < excerciseTexts.length; i++) {
         var t = excerciseTexts[i].replace(re, '<mark><b>$1</b></mark>')
-      
+  
         $(`.excercise${i+1}`).html(t)
 
         if(t == excerciseAnswers[i] && i < 2) {
@@ -61,7 +63,7 @@ var checkMatch = function(regex) {
             $(`.excercise${i+1}`).css("color", "black")
         }
 
-        if(i == 2) {
+        if(i == 2 || i == 3) {
             if(t == excerciseTexts[i]) {
                 $(`.excercise${i+1}`).removeClass("bg-danger")
                 $(`.excercise${i+1}`).css("color", "black")
@@ -103,9 +105,10 @@ $(document).ready(function(){
 
     $('#regexBox').on("keypress", function(e) {
         if (e.keyCode == 13 && match) {
-            window.location = "/lesson4"
+            window.location = "/lessonComplete"
         }
     });
+
 
     $("#solution").click(function(){
         viewSolution()

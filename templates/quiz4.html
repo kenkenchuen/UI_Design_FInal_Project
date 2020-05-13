@@ -2,39 +2,50 @@
 
 {% block content %}
 <!-- Server Stuff -->
-<script type="text/javascript" src="{{ url_for('static', filename = 'quiz3.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'quiz4.js') }}"></script>
 
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <br>
             <div class="lessonTitle">
-                Quiz - Question 3
+                Quiz - Question 4
             </div>
 
             <br>
             <div class="bodyText">
                 <div id="question">
-                    A database contains entries listing date ranges for which a user’s ID is valid.
-                    In the following example entries, match only the second date:
+                    Of the following binary numbers (2's complement), match the ones with a decimal value greater than or equal to 32 (00100000).
+                    <br>In other words, match only the first three numbers, and do not match the last two. 
                 </div>
                 
                 <br>
                 <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
                     <div class="card-body q1">
-                        ID: 20098 > 02/14/2019 - 02/28/2020
+                        01111000	
                     </div>
                 </div>
                 <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
                     <div class="card-body q2">
-                        ID: 31227 > 11/11/2019 - 11/25/2020
+                        00100001	
                     </div>
                 </div>
                 <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
                     <div class="card-body q3">
-                        ID: 72803 > 04/06/2019 - 04/20/2020
+                        01101101	
                     </div>
                 </div>
+                <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
+                    <div class="card-body q4">
+                        11111111		
+                    </div>
+                </div>
+                <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
+                    <div class="card-body q5">
+                        00011111		
+                    </div>
+                </div>
+                
                 
             </div>
 
@@ -49,7 +60,7 @@
             </div>
 
             <div style="text-align: right;">
-                <a id="next" href="/quiz4" class="btn btn-success btn-lg disabled">Next</a>
+                <a id="next" href="/quizComplete" class="btn btn-success btn-lg disabled">Next</a>
             </div>
               
         </div>

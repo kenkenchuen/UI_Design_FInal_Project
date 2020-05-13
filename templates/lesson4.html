@@ -2,26 +2,27 @@
 
 {% block content %}
 <!-- Server Stuff -->
-<script type="text/javascript" src="{{ url_for('static', filename = 'lesson3.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'lesson4.js') }}"></script>
 
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <br>
             <div class="lessonTitle">
-                Lesson 3 - Character Classes
+                Lesson 4 - Quantifiers  
             </div>
 
             <br>
             <div class="bodyText">
-                Character classes are indicated by <b>square brackets</b>, 
-                and are used to match any character inside the brackets. 
-                For example, “[abc]” will match either a, b, or c.  
-                Using a hyphen inside a character class specifies the characters' range. 
-                For example, “[a-d]” is the same as “[abcd]”. 
-                Note, the order of the characters or the range doesn't matter. 
-
-
+                Quantifiers are indicated by curly braces, 
+                and are used to specify how many repititions of a character are desired. 
+                For example, “a{5}” will match the string "aaaaa".  
+                A range of repititions can be specified by putting two numbers seperated by a comma inside the curly braces. 
+                For example, “b{3,5}” will match "b" at least 3 times and at most 5 times. Thus, it will match "bbb", "bbbb", and "bbbbb". 
+                Quantifiers can be used with metacharacters as well; ".{2,4}" will match between 2 and 4 of any character, and "[abc]{3}"
+                will match 3 characters, each of which can be a, b, or c.
+                
+                
                 <br><br>
                 <div class="row tab" >
                     <div class="col-md-2" style="color: gray;">
@@ -37,24 +38,24 @@
                 
                 <div class="row tab align-items-center" >
                     <div class="col-md-2">
-                        "fo[z-a]"
+                        "1{2,4}"
                     </div>
                     <div class="col-md-1">
                         <span style="font-size: 30px;">&#8658;</span>
                     </div>
                     <div class="col-md-7">
-                        They were cannon <mark>fod</mark>der be<mark>for</mark>e the <mark>fou</mark>r battleships.
+                        ...00<mark>11</mark>01000<mark>1111</mark>0101001010001010100<mark>111</mark>...
                     </div>
                 </div>
                 <div class="row tab align-items-center" >
                     <div class="col-md-2">
-                        “[0-9]”
+                        “[0-9]{8}”
                     </div>
                     <div class="col-md-1">
                         <span style="font-size: 30px;">&#8658;</span>
                     </div>
                     <div class="col-md-7">
-                        There are only <mark>2</mark><mark>8</mark> days in February.
+                        FID: <mark>29384023</mark> - CID: 10027 - PIN: 3147
                     </div>
                 </div>
                 <div class="row tab align-items-center" >
@@ -70,21 +71,26 @@
                 </div>
 
                 <br>
-                To move onto the next lesson, write a single regex pattern to match the 
-                strings "<b>man</b>" and "<b>can</b>", but not the string "<b>pan</b>":
+                To move onto the quiz, write a single regex pattern to match the first two
+                strings but not the last two strings:
                 <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
                     <div class="card-header excercise1">
-                        man
+                        aabbcc
                     </div>
                 </div>
                 <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
                     <div class="card-header excercise2">
-                        can
+                        aaaabbccc
                     </div>
                 </div>
                 <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
                     <div class="card-header excercise3">
-                        pan
+                        abc
+                    </div>
+                </div>
+                <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
+                    <div class="card-header excercise4">
+                        aaabbc
                     </div>
                 </div>
             </div>
@@ -95,7 +101,7 @@
             <div class="input-group mb-3" style="max-width: 75%; text-align: center; margin-top: -10px;">
                 <input id="regexBox" type="text" class="form-control" placeholder="Type your regex pattern here" style="height: 50px;">
                 <div class="input-group-append">
-                    <a id="nextLesson" href="/lesson4" class="btn btn-success btn-lg disabled">Next lesson</a>
+                    <a id="nextLesson" href="/lessonComplete" class="btn btn-success btn-lg disabled">Next lesson</a>
                 </div>
             </div>
 

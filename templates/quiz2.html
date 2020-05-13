@@ -15,34 +15,35 @@
             <br>
             <div class="bodyText">
                 <div id="question">
-                    A database contains entries listing date ranges for which a user’s ID is valid.
-                    In the following example entries, match only the second date:
+                    Which of the following regex patterns will match the string "AWXYZ6679"?
                 </div>
                 
                 <br>
                 <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
-                    <div class="card-body q1">
-                        ID: 20098 > 02/14/2019 - 02/28/2019
+                    <div class="card-body multipleChoice wrong">
+                        [a-zA-Z0-9]{10}
                     </div>
                 </div>
                 <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
-                    <div class="card-body q2">
-                        ID: 31227 > 11/11/2019 - 11/25/2019
+                    <div class="card-body multipleChoice wrong">
+                        [a-z]{5}[6-9]{4}
                     </div>
                 </div>
                 <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
-                    <div class="card-body q3">
-                        ID: 72803 > 04/06/2020 - 04/20/2020
+                    <div class="card-body multipleChoice correct">
+                        [a-zA-Z]{1,5}[0-9]{1-5}
                     </div>
                 </div>
-                
+                <div class="card" style="max-width: 75%; font-size: 18px; margin-top: 10px">
+                    <div class="card-body multipleChoice wrong">
+                        {A-Z}[5]{0-9}[4]
+                    </div>
+                </div>
             </div>
 
+            
+            
             <br>
-            <div class="input-group mb-3" style="max-width: 75%; text-align: center;">
-                <input id="regexBox" type="text" class="form-control redBorder" placeholder="Type your regex pattern here" style="height: 50px;">
-            </div>
-
             <div style="text-align: right;">
                 <a id="next" href="/quiz3" class="btn btn-success btn-lg disabled">Next</a>
             </div>

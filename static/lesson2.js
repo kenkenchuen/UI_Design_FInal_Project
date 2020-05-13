@@ -44,9 +44,7 @@ var checkMatch = function(regex) {
     match = true;
     for(var i = 0; i < excerciseTexts.length; i++) {
         var t = excerciseTexts[i].replace(re, '<mark><b>$1</b></mark>')
-        if($("#regexBox").val().length === 0 ) {
-            t = excerciseText
-        }
+
         $(`.excercise${i+1}`).html(t)
 
         if(t == excerciseAnswers[i]) {
